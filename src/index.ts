@@ -3,17 +3,17 @@
 */
 
 // Old
-function old_sayHello(){
-    var _this = this;
-
-    _this.name = 'hendrik';
-
-    setTimeout(function(){
-        console.log('hello ' + _this.name + ' (old)');
-    }, 1500);
-}
-
-old_sayHello();
+// function old_sayHello(){
+//     var _this = this;
+// 
+//     _this.name = 'hendrik';
+// 
+//     setTimeout(function(){
+//         console.log('hello ' + _this.name + ' (old)');
+//     }, 1500);
+// }
+// 
+// old_sayHello();
 
 // New
 // ES6可以用`來包文字, 在字串中可以用${變數} 來表示
@@ -26,3 +26,15 @@ function new_sayHello(){
 }
 
 new_sayHello();
+
+var hendrik = {
+    this.name = "Hendrik";
+    
+    sayHello: (names) => {
+        names.forEach((name)=>{
+          console.log(`${this.name} greets ${name}`);
+        });
+    }
+}
+hendrik.sayHello(['frikkie']);
+// this should output hendrik greets frikkie
