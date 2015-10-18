@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "amd",
+        "sourceMap": false,
+        "watch": true,
+        "outDir": "public/"
+    }
+}
