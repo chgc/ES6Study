@@ -1,13 +1,22 @@
 /*
-* Arrow functions
+* Arrow scope
 */
 // Old
-var old = function (n) {
-    return n * n;
-};
-// with Arror Functions express 1
-var new_1 = function (n) { return n * n; };
-// with arror function express 2
-var new_2 = function (n) {
-    return n * n;
-};
+function old_sayHello() {
+    var _this = this;
+    _this.name = 'hendrik';
+    setTimeout(function () {
+        console.log('hello ' + _this.name + ' (old)');
+    }, 1500);
+}
+old_sayHello();
+// New
+// ES6可以用`來包文字, 在字串中可以用${變數} 來表示
+function new_sayHello() {
+    var _this = this;
+    this.name = 'hendrik';
+    setTimeout(function () {
+        console.log("hello " + _this.name + " (new)");
+    }, 1500);
+}
+new_sayHello();

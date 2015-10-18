@@ -1,17 +1,28 @@
 /*
-* Arrow functions
+* Arrow scope
 */
 
 // Old
-var old = function(n) {
-    return n * n;
-};
+function old_sayHello(){
+    var _this = this;
 
-// with Arror Functions express 1
-let new_1 = (n) => n * n;
+    _this.name = 'hendrik';
 
-// with arror function express 2
-let new_2 = (n) => {
-	return n * n;
-};
+    setTimeout(function(){
+        console.log('hello ' + _this.name + ' (old)');
+    }, 1500);
+}
 
+old_sayHello();
+
+// New
+// ES6可以用`來包文字, 在字串中可以用${變數} 來表示
+function new_sayHello(){
+    this.name = 'hendrik';
+
+    setTimeout(()=>{
+        console.log(`hello ${this.name} (new)`);
+    }, 1500);
+}
+
+new_sayHello();
