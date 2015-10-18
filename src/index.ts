@@ -1,18 +1,48 @@
 /*
-* String templates
+* Let scope
 */
 
 // old
-function sayHello(name, surname){
-    console.log('hello there ' + name + ' ' + surname + ', the time is now ' + new Date());
-}
+// var 
+//     name = 'Fido',
+//     breed = 'schnauzer',
+//     owners = ['Hendrik', 'Alice']
+// ;
+// 
+// console.log(name + '(' + breed + '):');
+// 
+// for(var i = 0; i < owners.length; i++){
+//     var name = owners[i];
+// 
+//     console.log('Owner ' + name);
+// }
+// 
+// console.log(name);
+//output
+// Fido(schnauzer):
+// Owner Hendrik
+// Owner Alice
+// Alice (被改變掉了)
 
-sayHello('kevin','Yang');
+
 
 // new way 
-function sayHello_new(name, surname){
-    console.log(`hello there ${name} ${surname}, 
-    the time is now ${new Date()}`);
+let fname = 'Fido',
+    breed = 'schnauzer',
+    owners = ['Hendrik', 'Alice']
+;
+
+console.log(`${fname} (${breed}):`);
+
+for(let i = 0; i < owners.length; i++){
+    let fname = owners[i];
+    console.log(`Owner ${fname}`);
 }
 
-sayHello_new('kevin', 'Yang');
+
+console.log(fname);
+// output:
+// Fido (schnauzer):
+// Owner Hendrik
+// Owner Alice
+// Fido
